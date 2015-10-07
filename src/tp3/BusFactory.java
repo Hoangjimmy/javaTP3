@@ -1,22 +1,22 @@
-package tp3;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package tp3;
+
 /**
  *
  * @author hoangjim
  */
-public class MetroFactory implements ParserFactory<Metro> {
+public class BusFactory implements ParserFactory<Bus> {
 
 	@Override
-	public Metro tryConstruct(String[] args) {
-		if (args.length == 6 && args[5].equals("Metro"))
+	public Bus tryConstruct(String[] args) {
+		if (args.length == 6 && args[5].equals("Bus"))
 			return null;
 		try {
-			return new Metro(Integer.parseInt(args[0]),
+			return new Bus(Integer.parseInt(args[0]),
 					Double.parseDouble(args[1]),
 					Double.parseDouble(args[2]),
 					args[3],
@@ -27,4 +27,3 @@ public class MetroFactory implements ParserFactory<Metro> {
 	}
 
 }
-
