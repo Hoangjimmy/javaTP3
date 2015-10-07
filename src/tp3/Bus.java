@@ -25,6 +25,7 @@ public class Bus extends Arret {
 				&& b.getLati() == this.getLati()
 				&& b.getArrondissement().equals(this.getArrondissement())
 				&& b.getName().equals(this.getName());
+	}
 
 	public String toString() {
 		return super.toString() + " [bus]";

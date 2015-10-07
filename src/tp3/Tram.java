@@ -9,12 +9,13 @@ package tp3;
  *
  * @author hoangjim
  */
-public class Tram extends Arret{
+public class Tram extends Arret {
 
 	public Tram(int id, double longitude, double latitude, String name, String arrondissement) {
 		super(id, longitude, latitude, name, arrondissement);
 	}
-		@Override
+
+	@Override
 	public boolean equals(Object o) {
 		if (o == null)
 			return false;
@@ -28,6 +29,7 @@ public class Tram extends Arret{
 				&& t.getLati() == this.getLati()
 				&& t.getArrondissement().equals(this.getArrondissement())
 				&& t.getName().equals(this.getName());
+	}
 
 	@Override
 	public String toString() {

@@ -17,6 +17,7 @@ public class Tp3Test extends TestCase {
 
 	private Parser<Arret> parser;
 
+	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
 		parser = new Parser<>();
@@ -25,6 +26,7 @@ public class Tp3Test extends TestCase {
 		parser.addFactory(new MetroFactory());
 	}
 
+	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
 		parser = null;
