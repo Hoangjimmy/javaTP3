@@ -29,12 +29,22 @@ public class Tp3Test extends TestCase {
 		super.tearDown();
 		parser = null;
 	}
-	
+
 	@Test
 	public void testParseOne() throws ParseException {
 		Arret expected = new Metro(123, 8.5, 3.2, "nom", "arrondissement");
 		Arret actual = parser.parseOne("123#8.5#3.2#nom#arrondissement#metro");
-		
+		Arret expected2 = new Metro(123, 8.5, 3.2, "nom", "arrondissement");
+		Arret actual2 = parser.parseOne("123#8.5#3.2#nom#arrondissement#bus");
 		assertEquals(expected, actual);
+		assertNotSame(expected2, actual2);
+	}
+	
+	@Test
+	public void testAddFactory() throws ParseException{
+	
+	
+	
+	
 	}
 }

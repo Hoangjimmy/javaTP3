@@ -10,20 +10,20 @@ package tp3;
  * @author hoangjim
  */
 public class Arret {
-	
+
 	private int _id;
 	private double _longi, _lati;
 	private String _name;
 	private String _arrondissement;
-	
+
 	public Arret(int id, double longitude, double latitude, String name, String arrondissement) {
-		
+
 		_id = id;
 		_longi = longitude;
 		_lati = latitude;
 		_name = name;
 		_arrondissement = arrondissement;
-		
+
 	}
 
 	/**
@@ -95,19 +95,21 @@ public class Arret {
 	public void setArrondissement(String _arrondissement) {
 		this._arrondissement = _arrondissement;
 	}
-	
+
 	@Override
-	public String toString() {
-		return new StringBuilder()
-				.append(_id)
-				.append(" (")
-				.append(_longi)
-				.append("; ")
-				.append(_lati)
-				.append(") ")
-				.append(_name)
-				.append(" : ")
-				.append(_arrondissement)
-				.toString();
+	public boolean equals(Object o) {
+		if (o == null)
+			return false;
+		if (o == this)
+			return true;
+		if (!(o instanceof Arret))
+			return false;
+		Arret a = (Arret) o;
+		return a.getId() == this._id
+				&& a.getLongi() == this._longi
+				&& a.getLati() == this._lati
+				&& a.getArrondissement().equals(this._arrondissement)
+				&& a.getName().equals(this._name);
+
 	}
 }
