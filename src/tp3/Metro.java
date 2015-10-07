@@ -7,6 +7,20 @@ public class Metro extends Arret {
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		if (o == null)
+			return false;
+		if (o == this)
+			return true;
+		if (!(o instanceof Metro))
+			return false;
+		Metro m = (Metro) o;
+		return m.getId() == this.getId()
+				&& m.getLongi() == this.getLongi()
+				&& m.getLati() == this.getLati()
+				&& m.getArrondissement().equals(this.getArrondissement())
+				&& m.getName().equals(this.getName());
+
 	public String toString() {
 		return super.toString() + " [metro]";
 	}
