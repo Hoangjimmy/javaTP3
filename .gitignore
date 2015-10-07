@@ -13,4 +13,6 @@ hs_err_pid*
 /nbproject
 /build
 /lib
-
+*~
+build.xml
+manifest.mf
