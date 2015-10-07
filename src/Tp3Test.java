@@ -33,6 +33,4 @@ public class Tp3Test extends TestCase{
 		assertEquals(met, met2);
 	
 	}
-	
-	
 }
