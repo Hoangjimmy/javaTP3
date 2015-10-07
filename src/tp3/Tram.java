@@ -28,5 +28,9 @@ public class Tram extends Arret{
 				&& t.getLati() == this.getLati()
 				&& t.getArrondissement().equals(this.getArrondissement())
 				&& t.getName().equals(this.getName());
+
+	@Override
+	public String toString() {
+		return super.toString() + " [tram]";
 	}
 }

@@ -111,5 +111,21 @@ public class Arret {
 				&& a.getArrondissement().equals(this._arrondissement)
 				&& a.getName().equals(this._name);
 
+	
+	@Override
+	public boolean equals(Object o) {
+		if (o == null)
+			return false;
+		if (o == this)
+			return true;
+		if (!(o instanceof Arret))
+			return false;
+		Arret a = (Arret) o;
+		return a.getId() == this._id
+				&& a.getLongi() == this._longi
+				&& a.getLati() == this._lati
+				&& a.getArrondissement().equals(this._arrondissement)
+				&& a.getName().equals(this._name);
+
 	}
 }

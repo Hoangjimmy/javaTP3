@@ -5,10 +5,6 @@
  */
 package tp3;
 
-/**
- *
- * @author hoangjim
- */
 public class Bus extends Arret {
 
 	public Bus(int id, double longitude, double latitude, String name, String arrondissement) {
@@ -30,5 +26,7 @@ public class Bus extends Arret {
 				&& b.getArrondissement().equals(this.getArrondissement())
 				&& b.getName().equals(this.getName());
 
+	public String toString() {
+		return super.toString() + " [bus]";
 	}
 }

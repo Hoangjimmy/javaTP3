@@ -30,5 +30,7 @@ public class Metro extends Arret {
 				&& m.getArrondissement().equals(this.getArrondissement())
 				&& m.getName().equals(this.getName());
 
+	public String toString() {
+		return super.toString() + " [metro]";
 	}
 }
