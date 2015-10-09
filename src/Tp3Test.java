@@ -1,10 +1,5 @@
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import junit.framework.TestCase;
 import org.junit.Test;
-import sun.misc.IOUtils;
 import tp3.Arret;
 import tp3.BusFactory;
 import tp3.Metro;
