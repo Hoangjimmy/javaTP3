@@ -17,25 +17,22 @@ import tp3.TramFactory;
 
 public class Tp3Test extends TestCase {
 
-    private Parser<Arret> parser;
-
     @Override
     protected void setUp() throws Exception {
         super.setUp();
-        parser = new Parser<>();
-        parser.addFactory(new BusFactory());
-        parser.addFactory(new TramFactory());
-        parser.addFactory(new MetroFactory());
     }
 
     @Override
     protected void tearDown() throws Exception {
         super.tearDown();
-        parser = null;
     }
 
     @Test
     public void testParseOne() throws ParseException {
+        Parser<Arret> parser = new Parser<>();
+        parser.addFactory(new BusFactory());
+        parser.addFactory(new MetroFactory());
+
         Arret expected = new Metro(123, 8.5, 3.2, "nom", "arrondissement");
         Arret actual = parser.parseOne("123#8.5#3.2#nom#arrondissement#metro");
         Arret expected2 = new Metro(123, 8.5, 3.2, "nom", "arrondissement");
@@ -89,5 +86,18 @@ public class Tp3Test extends TestCase {
         Collections.sort(actual, ArretComparators.parArrondissmentEtNom);
 
         assertEquals(expected, actual);
+
+    }
+
+    public void testException() {
+        Parser<Arret> parser = new Parser<>();
+        parser.addFactory(new BusFactory());
+
+        try {
+            parser.addFactory(new BusFactory());
+            Arret arret = parser.parseOne("123#8.5#3.2#nom#arrondissement#metro");
+            fail("Object should not have been constructed : " + arret);
+        } catch (ParseException p) {
+        }
     }
 }
