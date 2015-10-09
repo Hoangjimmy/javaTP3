@@ -44,9 +44,6 @@ public class Tp3Test extends TestCase {
 	
 	@Test
 	public void testAddFactory() throws ParseException{
-	
-	
-	
-	
+
 	}
 }
