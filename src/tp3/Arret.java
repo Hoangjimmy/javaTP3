@@ -1,21 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp3;
 
-/**
- *
- * @author hoangjim
- */
 public class Arret {
 
+	/**
+	 * L'identifiant de l'arrêt
+	 */
 	private int _id;
+	/**
+	 * Les coordonnées géoraphiques de l'arrêt
+	 */
 	private double _longi, _lati;
+	/**
+	 * Le nom de l'arrêt
+	 */
 	private String _name;
+	/**
+	 * L'arrondissment de l'arrêt
+	 */
 	private String _arrondissement;
 
+	/**
+	 *
+	 * @param id	L'identifiant de l'arrêt
+	 * @param longitude	La longitude de l'arrêt
+	 * @param latitude	La latitude de l'arrêt
+	 * @param name	Le nom de l'arrêt
+	 * @param arrondissement	L'arrondissment de l'arrêt
+	 */
 	public Arret(int id, double longitude, double latitude, String name, String arrondissement) {
 
 		_id = id;
@@ -27,70 +38,70 @@ public class Arret {
 	}
 
 	/**
-	 * @return the _id
+	 * @return L'identifiant de l'arrêt
 	 */
 	public int getId() {
 		return _id;
 	}
 
 	/**
-	 * @param _id the _id to set
+	 * @param _id L'identifiant de l'arrêt
 	 */
 	public void setId(int _id) {
 		this._id = _id;
 	}
 
 	/**
-	 * @return the _longi
+	 * @return La longitude de l'arrêt
 	 */
 	public double getLongi() {
 		return _longi;
 	}
 
 	/**
-	 * @param _longi the _longi to set
+	 * @param _longi La longitude de l'arrêt
 	 */
 	public void setLongi(double _longi) {
 		this._longi = _longi;
 	}
 
 	/**
-	 * @return the _lati
+	 * @return La latitude de l'arrêt
 	 */
 	public double getLati() {
 		return _lati;
 	}
 
 	/**
-	 * @param _lati the _lati to set
+	 * @param _lati La latitude de l'arrêt
 	 */
 	public void setLati(double _lati) {
 		this._lati = _lati;
 	}
 
 	/**
-	 * @return the _name
+	 * @return Le nom de l'arrêt
 	 */
 	public String getName() {
 		return _name;
 	}
 
 	/**
-	 * @param _name the _name to set
+	 * @param _name Le nom de l'arrêt
 	 */
 	public void setName(String _name) {
 		this._name = _name;
 	}
 
 	/**
-	 * @return the _arrondissement
+	 * @return L'arrondissment de l'arrêt
 	 */
 	public String getArrondissement() {
 		return _arrondissement;
 	}
 
 	/**
-	 * @param _arrondissement the _arrondissement to set
+	 * @param _arrondissement L'arrondissment de l'arrêt
 	 */
 	public void setArrondissement(String _arrondissement) {
 		this._arrondissement = _arrondissement;
