@@ -1,5 +1,8 @@
 package tp3;
 
+/**
+ * Un arrêt de transport en commun
+ */
 public class Arret {
 
 	/**
