@@ -71,6 +71,8 @@ public class Tp3Test extends TestCase {
 	}
 
 	@Test
+	public void testAddFactory() throws ParseException{
+
 	public void testArrNameSorting() {
 		Arret arr1 = new Metro(1, 8.5, 3.2, "nom2", "arrondissement3");
 		Arret arr2 = new Tram(2, 8.5, 3.2, "nom1", "arrondissement2");
