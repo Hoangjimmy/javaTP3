@@ -17,77 +17,77 @@ import tp3.TramFactory;
 
 public class Tp3Test extends TestCase {
 
-	private Parser<Arret> parser;
+    private Parser<Arret> parser;
 
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
-		parser = new Parser<>();
-		parser.addFactory(new BusFactory());
-		parser.addFactory(new TramFactory());
-		parser.addFactory(new MetroFactory());
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        parser = new Parser<>();
+        parser.addFactory(new BusFactory());
+        parser.addFactory(new TramFactory());
+        parser.addFactory(new MetroFactory());
+    }
 
-	@Override
-	protected void tearDown() throws Exception {
-		super.tearDown();
-		parser = null;
-	}
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+        parser = null;
+    }
 
-	@Test
-	public void testParseOne() throws ParseException {
-		Arret expected = new Metro(123, 8.5, 3.2, "nom", "arrondissement");
-		Arret actual = parser.parseOne("123#8.5#3.2#nom#arrondissement#metro");
-		Arret expected2 = new Metro(123, 8.5, 3.2, "nom", "arrondissement");
-		Arret actual2 = parser.parseOne("123#8.5#3.2#nom#arrondissement#bus");
-		assertEquals(expected, actual);
-		assertNotSame(expected2, actual2);
-	}
+    @Test
+    public void testParseOne() throws ParseException {
+        Arret expected = new Metro(123, 8.5, 3.2, "nom", "arrondissement");
+        Arret actual = parser.parseOne("123#8.5#3.2#nom#arrondissement#metro");
+        Arret expected2 = new Metro(123, 8.5, 3.2, "nom", "arrondissement");
+        Arret actual2 = parser.parseOne("123#8.5#3.2#nom#arrondissement#bus");
+        assertEquals(expected, actual);
+        assertNotSame(expected2, actual2);
+    }
 
-	@Test
-	public void testAddFactory() throws ParseException {
+    @Test
+    public void testAddFactory() throws ParseException {
 
-	}
+    }
 
-	@Test
-	public void testIdSorting() {
-		Arret arr1 = new Metro(1, 8.5, 3.2, "nom2", "arrondissement3");
-		Arret arr2 = new Tram(2, 8.5, 3.2, "nom1", "arrondissement2");
-		Arret arr3 = new Bus(3, 8.5, 3.2, "nom3", "arrondissement2");
+    @Test
+    public void testIdSorting() {
+        Arret arr1 = new Metro(1, 8.5, 3.2, "nom2", "arrondissement3");
+        Arret arr2 = new Tram(2, 8.5, 3.2, "nom1", "arrondissement2");
+        Arret arr3 = new Bus(3, 8.5, 3.2, "nom3", "arrondissement2");
 
-		List<Arret> expected = new ArrayList<>();
-		expected.add(arr1);
-		expected.add(arr2);
-		expected.add(arr3);
+        List<Arret> expected = new ArrayList<>();
+        expected.add(arr1);
+        expected.add(arr2);
+        expected.add(arr3);
 
-		List<Arret> actual = new ArrayList<>();
-		actual.add(arr2);
-		actual.add(arr1);
-		actual.add(arr3);
+        List<Arret> actual = new ArrayList<>();
+        actual.add(arr2);
+        actual.add(arr1);
+        actual.add(arr3);
 
-		Collections.sort(actual, ArretComparators.parId);
+        Collections.sort(actual, ArretComparators.parId);
 
-		assertEquals(expected, actual);
-	}
+        assertEquals(expected, actual);
+    }
 
-	@Test
-	public void testArrNameSorting() {
-		Arret arr1 = new Metro(1, 8.5, 3.2, "nom2", "arrondissement3");
-		Arret arr2 = new Tram(2, 8.5, 3.2, "nom1", "arrondissement2");
-		Arret arr3 = new Bus(3, 8.5, 3.2, "nom3", "arrondissement2");
+    @Test
+    public void testArrNameSorting() {
+        Arret arr1 = new Metro(1, 8.5, 3.2, "nom2", "arrondissement3");
+        Arret arr2 = new Tram(2, 8.5, 3.2, "nom1", "arrondissement2");
+        Arret arr3 = new Bus(3, 8.5, 3.2, "nom3", "arrondissement2");
 
-		List<Arret> expected = new ArrayList<>();
-		expected.add(arr2);
-		expected.add(arr3);
-		expected.add(arr1);
+        List<Arret> expected = new ArrayList<>();
+        expected.add(arr2);
+        expected.add(arr3);
+        expected.add(arr1);
 
-		List<Arret> actual = new ArrayList<>();
-		actual.add(arr1);
-		actual.add(arr2);
-		actual.add(arr3);
+        List<Arret> actual = new ArrayList<>();
+        actual.add(arr1);
+        actual.add(arr2);
+        actual.add(arr3);
 
-		Collections.sort(actual, ArretComparators.parArrondissmentEtNom);
+        Collections.sort(actual, ArretComparators.parArrondissmentEtNom);
 
-		assertEquals(expected, actual);
-	}
+        assertEquals(expected, actual);
+    }
 }
