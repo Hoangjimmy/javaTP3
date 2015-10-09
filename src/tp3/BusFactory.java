@@ -1,5 +1,8 @@
 package tp3;
 
+/**
+ * Une fabrique d'arrêts de bus.
+ */
 public class BusFactory implements ParserFactory<Bus> {
 
 	@Override
